@@ -1,0 +1,2191 @@
+/* ==========================================================
+   ODYSSEY SAGA RPG
+   STYLE.CSS
+   PART 2A
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0b1120;
+    color:white;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#081220,
+#101b30,
+#081220);
+
+overflow-x:hidden;
+
+}
+
+/* ===========================
+MAIN GAME
+=========================== */
+
+#game{
+
+width:100%;
+max-width:1300px;
+
+margin:auto;
+
+padding:20px;
+
+}
+
+/* ===========================
+TITLE
+=========================== */
+
+header{
+
+text-align:center;
+
+margin-bottom:20px;
+
+}
+
+header h1{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+color:#ffd54a;
+
+text-shadow:
+
+0 0 12px gold,
+
+0 0 20px orange;
+
+}
+
+/* ===========================
+TOP UI
+=========================== */
+
+#topUI{
+
+display:flex;
+
+gap:15px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+margin-bottom:20px;
+
+}
+
+/* ===========================
+STAT BOX
+=========================== */
+
+.statBox{
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(12px);
+
+border:
+
+1px solid rgba(255,255,255,.12);
+
+border-radius:14px;
+
+padding:12px;
+
+width:260px;
+
+box-shadow:
+
+0 0 12px rgba(0,0,0,.35);
+
+transition:.25s;
+
+}
+
+.statBox:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 0 18px rgba(255,255,255,.12);
+
+}
+
+.statBox div:first-child{
+
+font-weight:bold;
+
+margin-bottom:6px;
+
+}
+
+/* ===========================
+BARS
+=========================== */
+
+.bar{
+
+width:100%;
+
+height:22px;
+
+background:#222;
+
+border-radius:12px;
+
+overflow:hidden;
+
+border:
+
+1px solid rgba(255,255,255,.1);
+
+margin-bottom:6px;
+
+}
+
+.bar div{
+
+height:100%;
+
+width:100%;
+
+transition:
+
+width .35s ease;
+
+}
+
+/* HP */
+
+#hpFill{
+transition: width .25s ease;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#ff3d3d,
+
+#ff6b6b);
+
+}
+
+/* MP */
+
+#mpFill{
+transition: width .25s ease;
+background:
+
+linear-gradient(
+
+90deg,
+
+#2f80ff,
+
+#6bc5ff);
+
+}
+
+/* EXP */
+
+#expFill{
+transition: width .25s ease;
+background:
+
+linear-gradient(
+
+90deg,
+
+#7a5cff,
+
+#b388ff);
+
+}
+
+/* Enemy */
+
+#enemyFill{
+transition: width .25s ease;
+background:
+
+linear-gradient(
+
+90deg,
+
+#ff7b00,
+
+#ffb300);
+
+}
+
+/* ===========================
+PLAYER PANELS
+=========================== */
+
+#playerPanel{
+
+display:grid;
+
+grid-template-columns:
+
+1fr 1fr;
+
+gap:20px;
+
+margin-bottom:20px;
+
+}
+
+.panel{
+
+background:
+
+rgba(255,255,255,.06);
+
+border:
+
+1px solid rgba(255,255,255,.1);
+
+border-radius:16px;
+
+padding:18px;
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+
+0 0 12px rgba(0,0,0,.25);
+
+}
+
+.panel h2{
+
+margin-bottom:15px;
+
+color:#ffd54a;
+
+}
+
+.panel p{
+
+margin-bottom:10px;
+
+line-height:1.5;
+
+}
+
+.panel ul{
+
+list-style:none;
+
+}
+
+.panel li{
+
+padding:7px 0;
+
+border-bottom:
+
+1px solid rgba(255,255,255,.08);
+
+}
+
+/* ===========================
+BUTTONS
+=========================== */
+
+button{
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#334155,
+
+#1e293b);
+
+color:white;
+
+border:none;
+
+padding:12px 18px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:bold;
+
+transition:.2s;
+
+margin:4px;
+
+}
+
+button:hover{
+
+transform:
+
+translateY(-2px);
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#475569,
+
+#334155);
+
+box-shadow:
+
+0 0 12px rgba(255,255,255,.18);
+
+}
+
+button:active{
+
+transform:scale(.96);
+
+}
+
+/* ===========================
+SECTION TITLES
+=========================== */
+
+section h2{
+
+margin-bottom:12px;
+
+color:#ffd54a;
+
+}
+
+/* ===========================
+TEXT
+=========================== */
+
+span{
+
+font-weight:bold;
+
+}
+
+/* ===========================
+SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#374151;
+
+border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#4b5563;
+
+}
+
+/* ==========================================================
+   PART 2B
+   BATTLE � INVENTORY � SHOP � MAPS
+==========================================================*/
+
+/* ===========================
+   BATTLE AREA
+=========================== */
+
+#battle{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:20px;
+
+margin-bottom:25px;
+
+align-items:start;
+
+}
+
+#enemyCard{
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.10);
+
+border-radius:18px;
+
+padding:20px;
+
+text-align:center;
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 0 20px rgba(0,0,0,.30);
+
+min-height:340px;
+
+}
+
+#enemyCard img{
+
+width:180px;
+
+height:180px;
+
+object-fit:contain;
+
+margin-bottom:15px;
+
+filter:drop-shadow(0 0 12px rgba(255,255,255,.25));
+
+transition:.3s;
+
+}
+
+#enemyCard img:hover{
+
+transform:scale(1.08);
+
+}
+
+#enemyName{
+
+font-size:28px;
+
+margin-bottom:12px;
+
+color:#ffcb45;
+
+text-shadow:0 0 8px orange;
+
+}
+
+#enemyHP{
+
+display:block;
+
+margin-top:8px;
+
+font-weight:bold;
+
+font-size:18px;
+
+}
+
+/* ===========================
+   BATTLE BUTTONS
+=========================== */
+
+#battleButtons{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+margin-top:20px;
+
+}
+
+#battleButtons button{
+
+height:52px;
+
+font-size:16px;
+
+}
+
+/* ===========================
+   SKILLS
+=========================== */
+
+#skills{
+
+margin-top:25px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:16px;
+
+padding:15px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+#skillButtons{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+
+gap:10px;
+
+margin-top:12px;
+
+}
+
+.skillButton{
+
+background:linear-gradient(180deg,#312e81,#1e1b4b);
+
+border:none;
+
+border-radius:10px;
+
+padding:12px;
+
+color:white;
+
+cursor:pointer;
+
+transition:.25s;
+
+font-weight:bold;
+
+}
+
+.skillButton:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 0 15px rgba(99,102,241,.6);
+
+}
+
+.skillButton.cooldown{
+
+opacity:.45;
+
+cursor:not-allowed;
+
+}
+
+/* ===========================
+   INVENTORY
+=========================== */
+
+#inventorySection{
+
+margin-bottom:25px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:16px;
+
+padding:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+#inventoryGrid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(90px,1fr));
+
+gap:12px;
+
+margin-top:15px;
+
+}
+
+.inventoryItem{
+
+background:#1e293b;
+
+border-radius:12px;
+
+padding:10px;
+
+text-align:center;
+
+cursor:pointer;
+
+transition:.25s;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.inventoryItem:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 0 14px rgba(255,255,255,.15);
+
+}
+
+.inventoryItem img{
+
+width:48px;
+
+height:48px;
+
+object-fit:contain;
+
+margin-bottom:6px;
+
+}
+
+.inventoryName{
+
+font-size:13px;
+
+font-weight:bold;
+
+margin-bottom:4px;
+
+}
+
+.inventoryStats{
+
+font-size:12px;
+
+color:#cbd5e1;
+
+}
+
+/* ===========================
+   RARITIES
+=========================== */
+
+.common{
+
+border:2px solid #9ca3af;
+
+}
+
+.uncommon{
+
+border:2px solid #4ade80;
+
+}
+
+.rare{
+
+border:2px solid #3b82f6;
+
+box-shadow:0 0 12px rgba(59,130,246,.35);
+
+}
+
+.epic{
+
+border:2px solid #a855f7;
+
+box-shadow:0 0 14px rgba(168,85,247,.45);
+
+}
+
+.legendary{
+
+border:2px solid gold;
+
+box-shadow:0 0 18px gold;
+
+}
+
+.mythic{
+
+border:2px solid #ef4444;
+
+box-shadow:0 0 18px crimson;
+
+}
+
+.divine{
+
+border:2px solid cyan;
+
+box-shadow:0 0 22px cyan;
+
+}
+
+/* ===========================
+   SHOP
+=========================== */
+
+#shop{
+
+margin-bottom:25px;
+
+background:rgba(255,255,255,.05);
+
+padding:18px;
+
+border-radius:16px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+#shop button{
+
+width:180px;
+
+margin:8px;
+
+}
+
+/* ===========================
+   MAPS
+=========================== */
+
+#mapButtons{
+
+margin-bottom:25px;
+
+background:rgba(255,255,255,.05);
+
+padding:18px;
+
+border-radius:16px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+#mapButtons button{
+
+min-width:150px;
+
+margin:8px;
+
+}
+
+/* ===========================
+   CLASS SELECT
+=========================== */
+
+#classSelect{
+
+margin-bottom:30px;
+
+background:rgba(255,255,255,.05);
+
+padding:20px;
+
+border-radius:16px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+#classSelect button{
+
+width:180px;
+
+height:55px;
+
+font-size:16px;
+
+margin:10px;
+
+}
+
+/* ===========================
+   EQUIPMENT COLORS
+=========================== */
+
+#weaponSlot{
+
+color:#ffd54a;
+
+}
+
+#armorSlot{
+
+color:#4ade80;
+
+}
+
+#helmetSlot{
+
+color:#60a5fa;
+
+}
+
+#bootsSlot{
+
+color:#f472b6;
+
+}
+
+#ringSlot{
+
+color:#c084fc;
+
+}
+
+#necklaceSlot{
+
+color:#22d3ee;
+
+}
+
+/* ==========================================================
+   PART 2C
+   ANIMATIONS � EFFECTS � POPUPS � MOBILE
+==========================================================*/
+
+/* ===========================
+   FLOATING DAMAGE
+=========================== */
+
+#floatingDamage{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:9999;
+
+}
+
+.damage{
+
+position:absolute;
+
+font-size:30px;
+
+font-weight:bold;
+
+user-select:none;
+
+text-shadow:
+
+0 0 10px black,
+
+0 0 20px black;
+
+animation:damageFloat 1s forwards;
+
+}
+
+.damage.normal{
+
+color:#ffd54a;
+
+}
+
+.damage.crit{
+
+color:#ff3b3b;
+
+font-size:40px;
+
+animation:criticalFloat 1s forwards;
+
+}
+
+.damage.heal{
+
+color:#4ade80;
+
+}
+
+.damage.miss{
+
+color:white;
+
+font-style:italic;
+
+}
+
+/* ===========================
+   DAMAGE ANIMATION
+=========================== */
+
+@keyframes damageFloat{
+
+0%{
+
+opacity:1;
+
+transform:
+
+translateY(0px)
+
+scale(.7);
+
+}
+
+25%{
+
+transform:
+
+translateY(-25px)
+
+scale(1.2);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+
+translateY(-90px)
+
+scale(.9);
+
+}
+
+}
+
+@keyframes criticalFloat{
+
+0%{
+
+opacity:1;
+
+transform:
+
+scale(.4)
+
+rotate(-8deg);
+
+}
+
+20%{
+
+transform:
+
+scale(1.6)
+
+rotate(5deg);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+
+translateY(-120px)
+
+scale(1);
+
+}
+
+}
+
+/* ===========================
+   SHAKE
+=========================== */
+
+.shake{
+
+animation:enemyShake .35s;
+
+}
+
+@keyframes enemyShake{
+
+0%{transform:translateX(0);}
+20%{transform:translateX(-10px);}
+40%{transform:translateX(10px);}
+60%{transform:translateX(-8px);}
+80%{transform:translateX(8px);}
+100%{transform:translateX(0);}
+
+}
+
+/* ===========================
+   PLAYER HIT
+=========================== */
+
+.playerHit{
+
+animation:playerHit .35s;
+
+}
+
+@keyframes playerHit{
+
+0%{
+
+filter:brightness(1);
+
+}
+
+50%{
+
+filter:brightness(2);
+
+}
+
+100%{
+
+filter:brightness(1);
+
+}
+
+}
+
+/* ===========================
+   LEVEL UP
+=========================== */
+
+.levelUp{
+
+animation:levelGlow 1.2s;
+
+}
+
+@keyframes levelGlow{
+
+0%{
+
+box-shadow:
+
+0 0 0 gold;
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 40px gold;
+
+}
+
+100%{
+
+box-shadow:
+
+0 0 0 gold;
+
+}
+
+}
+
+/* ===========================
+   LOOT POPUP
+=========================== */
+
+#lootPopup{
+
+position:fixed;
+
+bottom:30px;
+
+right:30px;
+
+background:#111827;
+
+padding:18px;
+
+border-radius:12px;
+
+border:2px solid gold;
+
+display:none;
+
+z-index:999;
+
+box-shadow:
+
+0 0 20px rgba(255,215,0,.5);
+
+min-width:220px;
+
+animation:popupSlide .4s;
+
+}
+
+@keyframes popupSlide{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateX(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateX(0);
+
+}
+
+}
+
+/* ===========================
+   NOTIFICATIONS
+=========================== */
+
+.notification{
+
+position:fixed;
+
+top:25px;
+
+right:25px;
+
+background:#1e293b;
+
+padding:15px 20px;
+
+border-radius:10px;
+
+border-left:5px solid #22c55e;
+
+font-weight:bold;
+
+z-index:9999;
+
+animation:notify .4s;
+
+}
+
+@keyframes notify{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateX(80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateX(0);
+
+}
+
+}
+
+/* ===========================
+   LOADING SCREEN
+=========================== */
+
+#loading{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#050816;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:100000;
+
+}
+
+.loader{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+border:
+
+8px solid rgba(255,255,255,.1);
+
+border-top:8px solid gold;
+
+animation:spin 1s linear infinite;
+
+margin-bottom:20px;
+
+}
+
+@keyframes spin{
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+.modal{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.75);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+}
+
+.modalContent{
+
+background:#111827;
+
+padding:30px;
+
+border-radius:16px;
+
+width:650px;
+
+max-width:95%;
+
+border:2px solid rgba(255,255,255,.1);
+
+}
+
+/* ===========================
+   ITEM TOOLTIP
+=========================== */
+
+.tooltip{
+
+position:absolute;
+
+background:#111827;
+
+padding:12px;
+
+border-radius:10px;
+
+border:1px solid #475569;
+
+font-size:14px;
+
+display:none;
+
+z-index:999999;
+
+min-width:220px;
+
+box-shadow:
+
+0 0 18px rgba(0,0,0,.45);
+
+}
+
+/* ===========================
+   GOLD TEXT
+=========================== */
+
+.gold{
+
+color:gold;
+
+font-weight:bold;
+
+}
+
+/* ===========================
+   EXP TEXT
+=========================== */
+
+.exp{
+
+color:#a855f7;
+
+font-weight:bold;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:900px){
+
+#battle{
+
+grid-template-columns:1fr;
+
+}
+
+#playerPanel{
+
+grid-template-columns:1fr;
+
+}
+
+#battleButtons{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+#skillButtons{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+#inventoryGrid{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+.statBox{
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:600px){
+
+header h1{
+
+font-size:28px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+#battleButtons{
+
+grid-template-columns:1fr;
+
+}
+
+#skillButtons{
+
+grid-template-columns:1fr;
+
+}
+
+#inventoryGrid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+#enemyCard img{
+
+width:130px;
+
+height:130px;
+
+}
+
+.damage{
+
+font-size:22px;
+
+}
+
+.damage.crit{
+
+font-size:30px;
+
+}
+
+}
+
+/* ==========================================================
+   PART 2D
+   FINAL POLISH � STATUS EFFECTS � BOSS UI � UTILITIES
+==========================================================*/
+
+/* ===========================
+   STATUS EFFECTS
+=========================== */
+
+.statusContainer{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:10px;
+    flex-wrap:wrap;
+}
+
+.status{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    color:white;
+    animation:statusPulse 2s infinite;
+}
+
+.status.poison{
+    background:#16a34a;
+    box-shadow:0 0 12px #16a34a;
+}
+
+.status.burn{
+    background:#dc2626;
+    box-shadow:0 0 12px #dc2626;
+}
+
+.status.freeze{
+    background:#38bdf8;
+    box-shadow:0 0 12px #38bdf8;
+}
+
+.status.stun{
+    background:#facc15;
+    color:black;
+    box-shadow:0 0 12px gold;
+}
+
+.status.bleed{
+    background:#991b1b;
+    box-shadow:0 0 12px crimson;
+}
+
+.status.buff{
+    background:#4f46e5;
+    box-shadow:0 0 12px #6366f1;
+}
+
+@keyframes statusPulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.12);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* ===========================
+   BOSS CARD
+=========================== */
+
+.boss{
+
+border:3px solid crimson;
+
+box-shadow:
+
+0 0 25px crimson,
+
+0 0 45px rgba(220,38,38,.35);
+
+animation:bossGlow 2s infinite alternate;
+
+}
+
+@keyframes bossGlow{
+
+from{
+
+box-shadow:
+0 0 15px crimson;
+
+}
+
+to{
+
+box-shadow:
+0 0 40px red;
+
+}
+
+}
+
+.bossName{
+
+color:#ff5252;
+
+font-size:34px;
+
+font-weight:bold;
+
+text-shadow:
+
+0 0 12px crimson,
+
+0 0 22px red;
+
+}
+
+/* ===========================
+   BOSS HP BAR
+=========================== */
+
+.bossBar{
+
+height:30px;
+
+background:#111;
+
+border-radius:15px;
+
+overflow:hidden;
+
+border:2px solid crimson;
+
+margin-top:10px;
+
+}
+
+.bossBar div{
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#7f1d1d,
+
+#ef4444,
+
+#dc2626);
+
+}
+
+/* ===========================
+   SKILL COOLDOWN
+=========================== */
+
+.cooldownOverlay{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.65);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+font-size:22px;
+
+font-weight:bold;
+
+border-radius:10px;
+
+color:white;
+
+}
+
+/* ===========================
+   BUFF PANEL
+=========================== */
+
+#buffPanel{
+
+display:flex;
+
+justify-content:center;
+
+gap:10px;
+
+margin-top:15px;
+
+flex-wrap:wrap;
+
+}
+
+/* ===========================
+   ACHIEVEMENT POPUP
+=========================== */
+
+#achievement{
+
+position:fixed;
+
+top:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+background:#1e293b;
+
+padding:18px 30px;
+
+border-radius:14px;
+
+border:2px solid gold;
+
+display:none;
+
+font-weight:bold;
+
+z-index:999999;
+
+box-shadow:
+
+0 0 25px gold;
+
+animation:achievementShow .5s;
+
+}
+
+@keyframes achievementShow{
+
+from{
+
+opacity:0;
+
+transform:
+
+translate(-50%,-50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translate(-50%,0);
+
+}
+
+}
+
+/* ===========================
+   VICTORY SCREEN
+=========================== */
+
+#victoryScreen{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.90);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:999999;
+
+}
+
+#victoryScreen h1{
+
+font-size:70px;
+
+color:gold;
+
+text-shadow:
+
+0 0 25px gold;
+
+margin-bottom:20px;
+
+}
+
+#victoryScreen p{
+
+font-size:22px;
+
+margin-bottom:25px;
+
+}
+
+/* ===========================
+   GAME OVER
+=========================== */
+
+#gameOver{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:black;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:999999;
+
+}
+
+#gameOver h1{
+
+font-size:64px;
+
+color:red;
+
+text-shadow:
+
+0 0 25px red;
+
+margin-bottom:20px;
+
+}
+
+#gameOver button{
+
+width:220px;
+
+}
+
+/* ===========================
+   UTILITY CLASSES
+=========================== */
+
+.hidden{
+
+display:none !important;
+
+}
+
+.flex{
+
+display:flex;
+
+}
+
+.center{
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.textCenter{
+
+text-align:center;
+
+}
+
+.bold{
+
+font-weight:bold;
+
+}
+
+.mt10{
+
+margin-top:10px;
+
+}
+
+.mt20{
+
+margin-top:20px;
+
+}
+
+.mt30{
+
+margin-top:30px;
+
+}
+
+.mb10{
+
+margin-bottom:10px;
+
+}
+
+.mb20{
+
+margin-bottom:20px;
+
+}
+
+.mb30{
+
+margin-bottom:30px;
+
+}
+
+/* ===========================
+   SCROLLABLE PANELS
+=========================== */
+
+.scroll{
+
+overflow-y:auto;
+
+max-height:500px;
+
+padding-right:6px;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+margin-top:40px;
+
+padding:20px;
+
+text-align:center;
+
+color:#94a3b8;
+
+font-size:14px;
+
+}
+
+/* ===========================
+   FINAL TRANSITIONS
+=========================== */
+
+button,
+.inventoryItem,
+.panel,
+.statBox,
+#enemyCard{
+
+transition:
+
+all .25s ease;
+
+}
+
+img{
+
+user-select:none;
+
+-webkit-user-drag:none;
+
+}
+
+::selection{
+
+background:gold;
+
+color:black;
+
+}
+/*========================
+    BATTLE SCREEN
+=========================*/
+
+#battle{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+min-height:350px;
+
+}
+
+#playerCard,
+#enemyCard{
+
+width:220px;
+text-align:center;
+
+}
+
+#playerImage,
+#enemyImage{
+
+width:160px;
+height:160px;
+object-fit:contain;
+transition:.25s;
+
+}
+
+.hpBar{
+
+width:180px;
+height:18px;
+background:#222;
+border-radius:20px;
+overflow:hidden;
+margin:auto;
+
+}
+
+.hpFill{
+
+height:100%;
+background:linear-gradient(to right,#ff4b4b,#33dd55);
+transition:width .35s;
+
+}
+
+.damage{
+
+    position:absolute;
+
+    color:#ff4040;
+
+    font-weight:bold;
+
+    font-size:24px;
+
+    pointer-events:none;
+
+    animation:floatDamage .8s forwards;
+
+   }
+
+      @keyframes floatDamage{
+
+      0%{
+
+   transform:translateY(0);
+
+   opacity:1;
+
+   }
+
+   100%{
+
+   transform:translateY(-60px);
+
+   opacity:0;
+
+   }
+
+}
+
+@keyframes damage{
+
+0%{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+100%{
+
+opacity:0;
+transform:translateY(-60px);
+
+}
+
+}
+
+.hit{
+
+animation:hitFlash .18s;
+
+}
+
+@keyframes hitFlash{
+
+0%{transform:translateX(0);}
+25%{transform:translateX(-8px);}
+50%{transform:translateX(8px);}
+75%{transform:translateX(-4px);}
+100%{transform:translateX(0);}
+
+}
+#battleScene{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:30px;
+
+min-height:300px;
+
+}
+
+#playerSide,
+#enemySide{
+
+width:40%;
+
+text-align:center;
+
+position:relative;
+
+}
+
+#battleMiddle{
+
+width:20%;
+
+font-size:40px;
+
+font-weight:bold;
+
+color:white;
+
+}
+
+#playerImage,
+#enemyImage{
+
+width:180px;
+
+height:180px;
+
+object-fit:contain;
+
+image-rendering:pixelated;
+
+}
+
+.hpBar{
+
+width:220px;
+
+height:20px;
+
+background:#333;
+
+margin:auto;
+
+border-radius:8px;
+
+overflow:hidden;
+
+}
+
+#playerFill,
+#enemyFill{
+
+height:100%;
+
+background:#43d854;
+
+transition:.25s;
+
+}

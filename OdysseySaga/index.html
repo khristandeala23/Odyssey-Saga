@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>Odyssey Saga</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="game">
+
+<header>
+
+<h1>? Odyssey Saga</h1>
+
+<div id="topUI">
+
+<div class="statBox">
+
+<div>HP</div>
+
+<div class="bar">
+
+<div id="hpFill"></div>
+
+</div>
+
+<span id="hpText"></span>
+
+</div>
+
+<div class="statBox">
+
+<div>MP</div>
+
+<div class="bar">
+
+<div id="mpFill"></div>
+
+</div>
+
+<span id="mpText"></span>
+
+</div>
+
+<div class="statBox">
+
+<div>EXP</div>
+
+<div class="bar">
+
+<div id="expFill"></div>
+
+</div>
+
+<span id="expText"></span>
+
+</div>
+
+</div>
+
+</header>
+
+<section id="playerPanel">
+
+<div class="panel">
+
+<h2>Player</h2>
+
+<p>
+Class:
+<span id="playerClass">
+None
+</span>
+</p>
+
+<p>
+Level:
+<span id="playerLevel">
+1
+</span>
+</p>
+
+<p>
+Gold:
+<span id="playerGold">
+0
+</span>
+</p>
+
+<p>
+Attack:
+<span id="playerAtk">
+0
+</span>
+</p>
+
+<p>
+Defense:
+<span id="playerDef">
+0
+</span>
+</p>
+
+<p>
+Crit:
+<span id="playerCrit">
+0%
+</span>
+</p>
+
+</div>
+
+<div class="panel">
+
+<h2>Equipment</h2>
+
+<ul>
+
+<li>
+Weapon:
+<span id="weaponSlot">None</span>
+</li>
+
+<li>
+Armor:
+<span id="armorSlot">None</span>
+</li>
+
+<li>
+Helmet:
+<span id="helmetSlot">None</span>
+</li>
+
+<li>
+Boots:
+<span id="bootsSlot">None</span>
+</li>
+
+<li>
+Ring:
+<span id="ringSlot">None</span>
+</li>
+
+<li>
+Necklace:
+<span id="necklaceSlot">None</span>
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="battle">
+
+    <div id="battleScene">
+
+        <div id="enemySide">
+
+            <div class="nameBox">
+                <span id="enemyName">Slime</span>
+            </div>
+
+            <img
+                id="enemyImage"
+                src="assets/enemies/slime.png"
+                alt="Enemy">
+
+            <div class="hpBar">
+
+                <div id="enemyFill"></div>
+
+            </div>
+
+            <div id="enemyHP"></div>
+
+        </div>
+
+        <div id="battleMiddle">
+
+            <h2>VS</h2>
+
+        </div>
+
+        <div id="playerSide">
+
+            <img
+                id="playerImage"
+                src="assets/player/default.png"
+                alt="Player">
+
+            <div class="hpBar">
+
+                <div id="playerFill"></div>
+
+            </div>
+
+            <div id="playerHP"></div>
+
+            <div id="playerName">Hero</div>
+
+        </div>
+
+    </div>
+
+    <div id="battleButtons">
+
+        <button id="btn-attack">⚔ Attack</button>
+
+        <button id="btn-skill">✨ Skill</button>
+
+        <button id="btn-item">🧪 Item</button>
+
+        <button id="btn-escape">🏃 Escape</button>
+
+    </div>
+
+</section>
+<div id="movementControls">
+
+    <button id="btn-up">▲</button>
+
+    <button id="btn-left">◀</button>
+
+    <button id="btn-down">▼</button>
+
+    <button id="btn-right">▶</button>
+
+</div>
+<section id="inventorySection">
+
+    <h2>Inventory</h2>
+
+    <div id="inventoryGrid"></div>
+
+</section>
+
+<section id="shop">
+
+    <h2>Shop</h2>
+
+    <button id="shop-potion">Potion</button>
+
+    <button id="shop-mana">Mana Potion</button>
+
+</section>
+
+<section id="mapButtons">
+
+<h2>Maps</h2>
+
+<button id="map-forest">Forest</button>
+
+<button id="map-dungeon">Dungeon</button>
+
+<button id="map-castle">Castle</button>
+
+<button id="map-volcano">Volcano</button>
+
+<button id="map-dragon">Dragon Lair</button>
+
+</section>
+
+<section id="classSelect">
+
+<h2>Choose Class</h2>
+
+<button id="class-assassin">Assassin</button>
+
+<button id="class-mage">Mage</button>
+
+<button id="class-tank">Tank</button>
+
+</section>
+
+<div id="floatingDamage"></div>
+
+</div>
+
+<script type="module" src="js/game.js"></script>
+
+<!-- COMBAT CONTROLS -->
+<div id="skill-menu" style="display:none;"></div>
+<div id="shop-menu" style="display:none;"></div>
+
+</body>
+
+</html>
